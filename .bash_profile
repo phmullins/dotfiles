@@ -22,6 +22,7 @@ shopt -s cdspell
 # Useful commands
 alias cls="clear"
 alias ll="ls -la"
+alias grep='grep --color=auto'
 
 # Makes moving around the CLI a little easier
 alias ..="cd .."
