@@ -2,6 +2,13 @@
 # .bash_profile setup                                                         #
 ###############################################################################
 
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
+
+# Change the prompt
+
+export PS1=">[\w] "
+
 # Colors in the terminal
 export CLICOLOR=1
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
