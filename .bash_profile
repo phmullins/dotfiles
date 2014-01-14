@@ -4,7 +4,7 @@
 
 # Colors in the terminal
 export CLICOLOR=1
-export LSCOLORS="gxfxbEaEBxxEhEhBaDaCaD"
+export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
 # Make some commands not show up in history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"\

@@ -20,9 +20,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 sudo nvram SystemAudioVolume=" "
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "0x1D80924609"
-sudo scutil --set HostName "0x1D80924609"
-sudo scutil --set LocalHostName "0x1D80924609"
+sudo scutil --set ComputerName "Mac Mini"
+sudo scutil --set HostName "Mac Mini"
+sudo scutil --set LocalHostName "Mac Mini"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x1D80924609"
 
 # Set highlight color to green
