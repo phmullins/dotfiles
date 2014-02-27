@@ -4,6 +4,7 @@
 
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
+export PATH=$PATH:/usr/local/Cellar/go/1.2/libexec/bin
 
 # Change the prompt
 
@@ -36,6 +37,10 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+
+# Easy access to Google Drive folder
+
+alias gd="cd ~/Google\ Drive/"
 
 # Check for OS X and Homebrew updates. 
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup'
