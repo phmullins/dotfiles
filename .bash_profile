@@ -6,6 +6,9 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=$PATH:/usr/local/Cellar/go/1.2/libexec/bin
 
+# export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+# export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
 # Change the prompt
 
 export PS1=">[\w] "
@@ -38,9 +41,9 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-# Easy access to Google Drive folder
+# Easy access to Dropbox folder
 
-alias gd="cd ~/Google\ Drive/"
+alias db="cd ~/Dropbox"
 
 # Check for OS X and Homebrew updates. 
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup'

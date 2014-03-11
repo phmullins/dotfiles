@@ -23,7 +23,7 @@ sudo nvram SystemAudioVolume=" "
 sudo scutil --set ComputerName "Mac Mini"
 sudo scutil --set HostName "Mac Mini"
 sudo scutil --set LocalHostName "Mac Mini"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x1D80924609"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Mac Mini"
 
 # Set highlight color to green
 #defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
