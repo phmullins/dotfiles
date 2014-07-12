@@ -11,7 +11,6 @@ export PATH=$PATH:/usr/local/opt/go/libexec/bin
 # export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # Change the prompt
-
 export PS1=">[\w] "
 
 # Colors in the terminal
@@ -32,8 +31,9 @@ shopt -s cdspell
 ###############################################################################
 
 # Useful commands
-alias cls="clear"
+alias c="clear"
 alias ll="ls -la"
+alias lsh="ls -ld .??*"
 alias grep='grep --color=auto'
 
 # Makes moving around the CLI a little easier
@@ -43,7 +43,6 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 # Easy access to Dropbox folder
-
 alias dbx="cd ~/Dropbox"
 
 # Check for OS X and Homebrew updates. 
@@ -58,3 +57,6 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 
 # Load SSH key in SSH Agent
 alias sshload="ssh-add ~/.ssh/pmullins"
+
+# your public ip
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"

@@ -238,6 +238,13 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 ###############################################################################
+# Keyboard                                                                   #
+###############################################################################
+
+# Disables the power button sleep setting
+defaults write com.apple.loginwindow PowerButtonSleepsSystem -bool no 
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
