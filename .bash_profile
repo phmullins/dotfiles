@@ -7,9 +7,6 @@ export PATH=/usr/local/sbin:$PATH
 export PATH=$PATH:/usr/local/Cellar/go/1.2/libexec/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
-# export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-# export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-
 # Change the prompt
 export PS1=">[\w] "
 
@@ -19,6 +16,7 @@ export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
 # Make some commands not show up in history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"\
+export HISTIGNORE="jrnl *"
 
 # Keep track of changes made using the defaults write command
 PROMPT_COMMAND='echo "$(history 1 | grep "defaults write")" | sed '/^$/d' >> ~/Documents/defaults-write.txt'
@@ -31,9 +29,10 @@ shopt -s cdspell
 ###############################################################################
 
 # Useful commands
-alias c="clear"
-alias ll="ls -la"
-alias lsh="ls -ld .??*"
+alias c='clear'
+alias l='ls -lh'
+alias ll='ls -lah'
+alias lsh='ls -ld .??*'
 alias grep='grep --color=auto'
 
 # Makes moving around the CLI a little easier
@@ -58,5 +57,10 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 # Load SSH key in SSH Agent
 alias sshload="ssh-add ~/.ssh/pmullins"
 
-# your public ip
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+# Show public ip
+alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+# Brew completion
+if [ -f ~/.scripts/brew_bash_completion.sh ]; then
+    . ~/.scripts/brew_bash_completion.sh
+fi
