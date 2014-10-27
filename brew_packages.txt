@@ -1,0 +1,10 @@
+ansible
+bash
+cmake
+curl
+ddrescue
+go
+jrnl
+newlisp
+testdisk
+wget
