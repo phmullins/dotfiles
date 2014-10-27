@@ -1,0 +1,13 @@
+{
+  "default_hour": 9, 
+  "timeformat": "%Y-%m-%d %H:%M", 
+  "linewrap": 79, 
+  "encrypt": false, 
+  "editor": "", 
+  "default_minute": 0, 
+  "highlight": true, 
+  "journals": {
+    "default": "/Users/pmullins/.jrnl/journal.txt"
+  }, 
+  "tagsymbols": "@"
+}
