@@ -3,6 +3,7 @@ bash
 cmake
 curl
 ddrescue
+fish
 go
 jrnl
 newlisp
