@@ -7,5 +7,6 @@ fish
 go
 jrnl
 newlisp
+ssh-copy-id
 testdisk
 wget
