@@ -5,6 +5,7 @@ curl
 ddrescue
 fish
 go
+hugo
 jrnl
 newlisp
 ssh-copy-id
