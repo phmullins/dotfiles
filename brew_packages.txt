@@ -8,6 +8,7 @@ go
 hugo
 jrnl
 newlisp
+openssl
 ssh-copy-id
 testdisk
 wget
