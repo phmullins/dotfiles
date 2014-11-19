@@ -4,7 +4,6 @@
 
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
-export PATH=$PATH:/usr/local/Cellar/go/1.2/libexec/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
 # Change the prompt
