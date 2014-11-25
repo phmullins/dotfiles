@@ -12,4 +12,5 @@ newlisp
 openssl
 ssh-copy-id
 testdisk
+tree
 wget
