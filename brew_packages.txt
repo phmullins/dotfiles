@@ -1,6 +1,7 @@
 ansible
 bash
 cmake
+coreutils
 curl
 ddrescue
 fish
@@ -14,3 +15,4 @@ ssh-copy-id
 testdisk
 tree
 wget
+whereami
