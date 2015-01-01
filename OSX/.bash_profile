@@ -47,7 +47,7 @@ alias dbx="cd ~/Dropbox"
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup'
 
 # Recursively delete `.DS_Store` files
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+alias clean="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
@@ -58,8 +58,3 @@ alias sshload="ssh-add ~/.ssh/pmullins"
 
 # Show public ip
 alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
-
-# Brew completion
-if [ -f ~/.scripts/brew_bash_completion.sh ]; then
-    . ~/.scripts/brew_bash_completion.sh
-fi

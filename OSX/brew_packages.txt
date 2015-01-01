@@ -1,6 +1,7 @@
 ansible
 bash
 cmake
+coreutils
 curl
 ddrescue
 fish
@@ -12,4 +13,6 @@ newlisp
 openssl
 ssh-copy-id
 testdisk
+tree
 wget
+whereami

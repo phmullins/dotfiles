@@ -1,0 +1,14 @@
+###############################################################################
+# Redhat Enterprise .bash_profile                                             #
+###############################################################################
+
+# Load aliases and functions from .bashrc
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+PATH=$PATH:$HOME/bin
+
+# Set the prompt to something reasonable
+export PS1=">[\w] "
