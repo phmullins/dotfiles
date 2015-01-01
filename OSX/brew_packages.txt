@@ -15,4 +15,3 @@ ssh-copy-id
 testdisk
 tree
 wget
-whereami
