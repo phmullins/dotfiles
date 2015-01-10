@@ -2,12 +2,18 @@
 # .bash_profile setup                                                         #
 ###############################################################################
 
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
+# Custom $PATH with extra locations.
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/opt/go/libexec/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
 
-# Change the prompt
-export PS1=">[\w] "
+# Path to make coreutils man pages accessible.
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
+# Location of Ansible host file
+export ANSIBLE_HOSTS=/Users/pmullins/Ansible/ansible_hosts
+
+# Customize the prompt
+# New prompt will look like this: [08:02 PM][~/Downloads]
+export PS1="[\D{%I:%M %p}][\w] "
 
 # Colors in the terminal
 export CLICOLOR=1
@@ -24,21 +30,32 @@ PROMPT_COMMAND='echo "$(history 1 | grep "defaults write")" | sed '/^$/d' >> ~/D
 shopt -s cdspell
 
 ###############################################################################
-# Alias                                                                       #
+# Aliases                                                                       #
 ###############################################################################
 
 # Useful commands
+# alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
 alias c='clear'
-alias l='ls -lh'
-alias ll='ls -lah'
+alias l='ls -CF'
+alias ll='ls -alF'
+alias la='ls -A'
 alias lsh='ls -ld .??*'
+alias drives="df -h"
 alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 # Makes moving around the CLI a little easier
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+
+# Ansible aliases.
+alias an='ansible'
+alias ap='ansible-playbook'
 
 # Easy access to Dropbox folder
 alias dbx="cd ~/Dropbox"
@@ -47,7 +64,7 @@ alias dbx="cd ~/Dropbox"
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup'
 
 # Recursively delete `.DS_Store` files
-alias clean="find . -type f -name '*.DS_Store' -ls -delete"
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
@@ -58,3 +75,9 @@ alias sshload="ssh-add ~/.ssh/pmullins"
 
 # Show public ip
 alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+# Flush DNS cache (See: http://support.apple.com/kb/ht5343).
+alias flush-dns='sudo killall -HUP mDNSResponder'
+
+# Search list of servers
+alias dst="cat ~/Dropbox/Work/server_list.txt | grep "
