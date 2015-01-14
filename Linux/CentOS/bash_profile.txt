@@ -10,5 +10,6 @@ fi
 # User specific environment and startup programs
 PATH=$PATH:$HOME/bin
 
-# Set the prompt to something reasonable
-export PS1=">[\w] "
+# Customize the prompt
+# New prompt will look like this: [08:02 PM][~/Downloads]
+export PS1="[\D{%I:%M %p}][\w] "
