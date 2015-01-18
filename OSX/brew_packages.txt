@@ -6,6 +6,7 @@ curl
 ddrescue
 fish
 go
+git
 hugo
 jrnl
 libyaml
