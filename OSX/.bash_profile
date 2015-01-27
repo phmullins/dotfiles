@@ -81,3 +81,8 @@ alias flush-dns='sudo killall -HUP mDNSResponder'
 
 # Search list of servers
 alias dst="cat ~/Dropbox/Work/server_list.txt | grep "
+
+# Launch the Swift REPL
+alias swift="xcrun swift"
+
+source /Users/pmullins/.iterm2_shell_integration.bash
