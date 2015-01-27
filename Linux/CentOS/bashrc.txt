@@ -20,3 +20,9 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+
+# Update packages
+alias update='yum -y update'
+
+# Become root
+alias root='sudo su -'
