@@ -1,23 +1,23 @@
-# .dotfiles for my OS X, Linux, and UNIX installs
+# .dotfiles
 
-##Linux
+## Linux
 
 Configuration Files
 
 - .bash_aliases
 
-##OS X
+## OS X
 
 Configuration Files
 
 - .bash_profile
 - .jrnl_config
 
-Scripts
+## Scripts
 
 - osx_setup.sh
 
-Brew Packages
+## Brew Packages
 
 - brew_packages.txt
 
