@@ -48,6 +48,9 @@ alias drives="df -h"
 # Search processes
 alias psg='ps -ef | grep'
 
+# Search for installed apps
+alias isthere="dpkg --get-selections | grep "
+
 # Makes moving around the CLI a little easier.
 alias ..="cd .."
 alias ...="cd ../.."

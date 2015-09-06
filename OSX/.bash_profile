@@ -1,88 +1,156 @@
+################################################################################################
+# Custom Apple OS X .bash_profile
+# By Patrick H. Mullins, pmullins11@mac.com, @phmullins
+# Grab the latest version at https://github.com/phmullins/dotfiles/blob/master/OSX/.bash_profile
+################################################################################################
+
 ###############################################################################
-# .bash_profile setup                                                         #
+# General Settings
 ###############################################################################
 
-# Custom $PATH with extra locations.
+## Default Editor
+export EDITOR='bbedit'
+
+## Custom $PATH with extra locations
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/opt/go/libexec/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
 
-# Path to make coreutils man pages accessible.
+## Path to make coreutils man pages accessible
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
-# Location of Ansible host file
-export ANSIBLE_HOSTS=/Users/pmullins/Ansible/ansible_hosts
+## Location of Ansible host file
+export ANSIBLE_HOSTS=/Users/pmullins/Development/ansible/hosts
 
-# Customize the prompt
-# New prompt will look like this: [08:02 PM][~/Downloads]
+## Customize the prompt
+## New prompt will look like this: [08:02 PM][~/Downloads]
 export PS1="[\D{%I:%M %p}][\w] "
 
-# Colors in the terminal
-export CLICOLOR=1
-export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-
-# Make some commands not show up in history
-export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"\
-export HISTIGNORE="jrnl *"
-
-# Keep track of changes made using the defaults write command
-PROMPT_COMMAND='echo "$(history 1 | grep "defaults write")" | sed '/^$/d' >> ~/Documents/defaults-write.txt'
-
-# Autocorrect typos in path names when using `cd`
+## Autocorrect typos in path names when using `cd`
 shopt -s cdspell
 
+## Homebrew
+export HOMEBREW_NO_EMOJI='1'
+
+## Reload .bash_profile to enable changes
+alias reload='source .bash_profile'
+
 ###############################################################################
-# Aliases                                                                       #
+# History
 ###############################################################################
 
-# Useful commands
-# alias rm='rm -i'
+## Set history length via HISTSIZE and HISTFILESIZE
+export HISTSIZE=1000
+export HISTFILESIZE=1000
+
+## Don't put duplicate lines in the history
+HISTCONTROL=ignoreboth
+
+## Add timestamp to history file
+export HISTTIMEFORMAT="%F %T "
+
+## Append to history. Don't overwrite
+shopt -s histappend
+
+## Make some commands not show up in history
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help:jrnl *"
+
+## Keep track of changes made using the defaults write command
+PROMPT_COMMAND='echo "$(history 1 | grep "defaults write")" | sed '/^$/d' >> ~/Documents/defaults-write.txt'
+
+###############################################################################
+# Aliases
+###############################################################################
+
+## Useful commands
+alias bb='bbedit'
+alias rm='rm -I --preserve-root'
 alias cp='cp -i'
 alias mv='mv -i'
-alias c='clear'
-alias l='ls -CF'
-alias ll='ls -alF'
-alias la='ls -A'
+alias l='ls --color=auto'
+alias ls='ls --color=auto'
+alias ll='ls -alF --color=auto'
+alias la='ls -A --color=auto'
 alias lsh='ls -ld .??*'
-alias drives="df -h"
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias drives='df -h'
+alias sizes='du -h -d1'
+alias c='clear'
 
-# Makes moving around the CLI a little easier
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
+## Search processes
+alias psg='ps -ef | grep '
 
-# Ansible aliases.
+## Create parent and child directories if not present
+alias mkdir='mkdir -pv'
+
+## Colorize diff output. Requires colordiff be installed
+alias diff='colordiff'
+
+## Makes moving around the CLI a little easier
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+## That space is so hard to get in there. :-)
+alias cd..='cd ..'
+
+## Ansible aliases
 alias an='ansible'
 alias ap='ansible-playbook'
 
-# Easy access to Dropbox folder
-alias dbx="cd ~/Dropbox"
+## Check for Homebrew updates
+alias update='brew update && brew upgrade --all && brew cask update && brew cleanup && brew cask cleanup'
 
-# Check for OS X and Homebrew updates. 
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup'
-
-# Recursively delete `.DS_Store` files
+## Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
-# Show/hide hidden files in Finder
+## Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
-# Load SSH key in SSH Agent
-alias sshload="ssh-add ~/.ssh/pmullins"
+## Load SSH key in SSH Agent
+alias sshload="ssh-add ~/.ssh/id_rsa"
 
-# Show public ip
-alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
+## Search list of servers
+alias dst="cat ~/Work/server_list.txt | grep "
 
-# Flush DNS cache (See: http://support.apple.com/kb/ht5343).
-alias flush-dns='sudo killall -HUP mDNSResponder'
-
-# Search list of servers
-alias dst="cat ~/Dropbox/Work/server_list.txt | grep "
-
-# Launch the Swift REPL
+## Launch the Swift REPL
 alias swift="xcrun swift"
 
-source /Users/pmullins/.iterm2_shell_integration.bash
+## Extract tar file
+alias untar='tar -zxvf'
+
+###############################################################################
+# Aliases - Networking Commands
+###############################################################################
+
+## Show public ip
+alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+## Flush DNS cache (See: http://support.apple.com/kb/ht5343)
+alias flushdns='sudo killall -HUP mDNSResponder'
+
+## Limit Ping to 5 ECHO_REQUEST packets
+alias ping='ping -c 5'
+
+## Fast Ping limited to 5 ECHO_REQUEST packets
+alias fastping='ping -c 100 -s.2 -c 5'
+
+## Show open ports
+alias ports='lsof -i -P | grep -i "listen"'
+
+## wget with resume
+alias wget='wget -c'
+
+###############################################################################
+# Functions
+###############################################################################
+
+## Display the top 10 history commands
+function ht {
+  history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
+}
+
+## Enable iTerm shell integration with Bash
+source ~/.iterm2/.iterm2_shell_integration.`basename $SHELL`
