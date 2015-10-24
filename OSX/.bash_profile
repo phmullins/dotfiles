@@ -33,6 +33,10 @@ export HOMEBREW_NO_EMOJI='1'
 ## Reload .bash_profile to enable changes
 alias reload='source .bash_profile'
 
+# Empty the Trash on all mounted volumes and the main HDD
+# Also, clear Apple’s System Logs to improve shell startup speed
+alias purge="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+
 ###############################################################################
 # History
 ###############################################################################
@@ -152,5 +156,3 @@ function ht {
   history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
 }
 
-## Enable iTerm shell integration with Bash
-source ~/.iterm2/.iterm2_shell_integration.`basename $SHELL`
