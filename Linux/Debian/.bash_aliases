@@ -19,7 +19,7 @@ alias untar="tar -zxvf"
 alias purge="history -c"
 
 # Search processes
-alias deamon="ps -ef | grep "
+alias pss="ps -ef | grep "
 
 # Search for installed apps
 alias isthere="dpkg --get-selections | grep "
@@ -66,3 +66,10 @@ alias getos="lsb_release -a"
 
 # Get processor information.
 alias getcpu="lscpu"
+
+# Update the system
+alias update="sudo apt update && sudo apt upgrade -y"
+
+# Remove any unused packages
+alias cleanup="sudo apt-get autoremove"
+

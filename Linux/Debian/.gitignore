@@ -1,0 +1,25 @@
+# macOS - System files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS - Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# macOS - Folders created on remote AFP share
+.AppleDB
+.AppleDesktop
+.apdisk
+
+# Terraform
+*.tfstate
+*.tfstate.backup
+terraform*
+
+# BBEdit 
+.bbprojectd
