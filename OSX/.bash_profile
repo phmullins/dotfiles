@@ -18,7 +18,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/opt/go/libexec/bin:/usr/lo
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 ## Location of Ansible host file
-export ANSIBLE_HOSTS=/Users/pmullins/Development/ansible/hosts
+export ANSIBLE_HOSTS=/Users/pmullins/Documents/Development/ansible/hosts
 
 ## Customize the prompt
 ## New prompt will look like this: [08:02 PM][~/Downloads]
@@ -35,7 +35,7 @@ alias reload='source .bash_profile'
 
 # Empty the Trash on all mounted volumes and the main HDD
 # Also, clear Apple’s System Logs to improve shell startup speed
-alias purge="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+alias nuke="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
 ###############################################################################
 # History
@@ -74,7 +74,7 @@ alias ls='ls --color=auto'
 alias ll='ls -alF --color=auto'
 alias la='ls -A --color=auto'
 alias lsh='ls -ld .??*'
-alias grep='grep --color=auto'
+alias grep='grep --color=auto -n'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias drives='df -h'
@@ -129,8 +129,11 @@ alias untar='tar -zxvf'
 # Aliases - Networking Commands
 ###############################################################################
 
+## Show local IP on en0
+alias iplocal='ifconfig en0 | grep --word-regexp inet | awk "{print $2}"'
+
 ## Show public ip
-alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ippub="dig +short myip.opendns.com @resolver1.opendns.com"
 
 ## Flush DNS cache (See: http://support.apple.com/kb/ht5343)
 alias flushdns='sudo killall -HUP mDNSResponder'
@@ -147,12 +150,29 @@ alias ports='lsof -i -P | grep -i "listen"'
 ## wget with resume
 alias wget='wget -c'
 
+## Speedtest
+alias speed='speedtest-cli --server 2406 --simple'
+
 ###############################################################################
 # Functions
 ###############################################################################
 
-## Display the top 10 history commands
-function ht {
-  history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
+## Push updates to my Blog
+function myblog {
+  rm -rf /tmp/phm
+  hugo -s /Users/pmullins/Documents/Websites/www/pmullins.net -d /tmp/phm
+  rsync -avze "ssh -p 22" /tmp/phm/ root@198.211.116.150:/var/www/pmullins.net/blog
+  #rsync -avze "ssh -p 22" /Users/pmullins/Documents/Websites/www/pmullins.net/public/ root@198.211.116.150:/var/www/pmullins.net/blog
 }
 
+## Push updates to Geektonium
+##function geekblog {
+##  rm -rf /tmp/phm
+##  hugo -s /Users/pmullins/Documents/Websites/www/geektonium.com -d /tmp/geektonium
+##  rsync -avze "ssh -p 22" /tmp/geektonium/ root@pmullins.net:/var/www/geektonium.com/blog
+##}
+
+## Generate a unique 10 character password
+function randpass(){
+  openssl rand -base64 20
+}
