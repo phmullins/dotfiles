@@ -3,8 +3,8 @@
 
 clear
 echo "Installing RaspbianOS configuration files...."
-cp /raspbian/.bash_aliases ~/
-cp /raspbian/.bashrc ~/
-cp /raspbian/.gitconfig ~/
-cp /raspbian/.profile ~/
+cp /Linux/Raspbian/.bash_aliases ~/
+cp /Linux/Raspbian/.bashrc ~/
+cp /Linux/Raspbian/.gitconfig ~/
+cp /Linux/Raspbian/.profile ~/
 echo "All done. Enjoy!"

@@ -3,8 +3,8 @@
 
 clear
 echo "Installing Debian configuration files...."
-cp /debian/.bash_aliases ~/
-cp /debian/.bashrc ~/
-cp /debian/.gitconfig ~/
-cp /debian/.profile ~/
+cp /Linux/Debian/.bash_aliases ~/
+cp /Linux/Debian/.bashrc ~/
+cp /Linux/Debian/.gitconfig ~/
+cp /Linux/Debian/.profile ~/
 echo "All done. Enjoy!"
