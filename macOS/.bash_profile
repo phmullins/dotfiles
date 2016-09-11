@@ -40,6 +40,12 @@ alias reload='~/source .bash_profile'
 # Also, clear Apple’s System Logs to improve shell startup speed
 alias nuke='sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* "delete from LSQuarantineEvent"'
 
+# Clean up LaunchServices to remove duplicates in the “Open With” menu
+alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+
+# Lock the screen (when going AFK)
+alias later="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
 ###############################################################################
 # History
 ###############################################################################
@@ -102,6 +108,14 @@ alias .....='cd ../../../..'
 ## That space is so hard to get in there. :-)
 alias cd..='cd ..'
 
+## Move to /working/websites folder
+alias web="cd /Users/pmullins/Documents/Websites"
+
+## Move to the Downloads folder
+alias dl="cd ~/Downloads"
+alias doc="cd ~/Documents"
+alias dev="cd ~/Documents/Development"
+
 ## Ansible aliases
 alias an='ansible'
 alias ap='ansible-playbook'
@@ -131,8 +145,6 @@ alias untar='tar -zxvf'
 ## Generate random 20 character password
 alias randpass="openssl rand -base64 20"
 
-## Move to /working/websites folder
-alias web="cd /Users/pmullins/Documents/Websites"
 
 ###############################################################################
 # Aliases - Networking Commands
