@@ -14,4 +14,4 @@ The script(s) will take care of sourcing the system files for you. There's no ne
 Created by [Patrick H. Mullins](http://www.pmullins.net/aboutme/). You can find me on  [Twitter](https://twitter.com/phmullins) and on [Telegram](https://telegram.org/) as @pmullins.
 
 ## License
-Source is released under the MIT (Massachusetts Institute of Technology) [license](license.md).
+Source is released under the FreeBSD (BSD-2-Clause) License [license](license.md).
