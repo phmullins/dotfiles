@@ -1,0 +1,32 @@
+# Numerous always-ignore extensions
+*.orig
+*.bak
+
+# macOS - System files
+.DocumentRevisions-V100
+.VolumeIcon.icns
+.Spotlight-V100
+.TemporaryItems
+.AppleDouble
+.LSOverride
+.fseventsd
+.DS_Store
+.Trashes
+._*
+
+# macOS - Folders created on remote AFP share
+.AppleDesktop
+.AppleDB
+.apdisk
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Terraform
+*.tfstate.backup
+*.tfstate
+terraform*
+
+# BBEdit 
+*.bbprojectd
