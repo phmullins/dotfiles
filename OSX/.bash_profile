@@ -70,7 +70,7 @@ alias rm='rm -I --preserve-root'
 alias cp='cp -i'
 alias mv='mv -i'
 alias l='ls --color=auto'
-alias ls='ls --color=auto'
+alias ls='ls -AlhF --color=auto'
 alias ll='ls -alF --color=auto'
 alias la='ls -A --color=auto'
 alias lsh='ls -ld .??*'
@@ -78,7 +78,7 @@ alias grep='grep --color=auto -n'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias drives='df -h'
-alias sizes='du -h -d1'
+alias usage='du -h -d1'
 alias c='clear'
 
 ## Search processes
@@ -125,6 +125,12 @@ alias swift="xcrun swift"
 ## Extract tar file
 alias untar='tar -zxvf'
 
+## Generate random 20 character password
+alias randpass="openssl rand -base64 20"
+
+## Move to /working/websites folder
+alias web="cd /Users/pmullins/Documents/Websites"
+
 ###############################################################################
 # Aliases - Networking Commands
 ###############################################################################
@@ -157,22 +163,15 @@ alias speed='speedtest-cli --server 2406 --simple'
 # Functions
 ###############################################################################
 
-## Push updates to my Blog
-function myblog {
+## Push updates to Geektonium
+function geekout {
   rm -rf /tmp/phm
-  hugo -s /Users/pmullins/Documents/Websites/www/pmullins.net -d /tmp/phm
-  rsync -avze "ssh -p 22" /tmp/phm/ root@198.211.116.150:/var/www/pmullins.net/blog
-  #rsync -avze "ssh -p 22" /Users/pmullins/Documents/Websites/www/pmullins.net/public/ root@198.211.116.150:/var/www/pmullins.net/blog
+  hugo -s /Users/pmullins/Documents/Websites/www/geektonium -d /tmp/geektonium
+  rsync -avze "ssh -p 22" /tmp/geektonium/ root@198.211.110.81:/var/www/geektonium/blog
 }
 
-## Push updates to Geektonium
-##function geekblog {
-##  rm -rf /tmp/phm
-##  hugo -s /Users/pmullins/Documents/Websites/www/geektonium.com -d /tmp/geektonium
-##  rsync -avze "ssh -p 22" /tmp/geektonium/ root@pmullins.net:/var/www/geektonium.com/blog
-##}
+## Copy dotfiles into Git repository
+function dotfiles {
+  cp /Users/pmullins/.bash_profile /Users/pmullins/Documents/Development/dotfiles/OSX/
 
-## Generate a unique 10 character password
-function randpass(){
-  openssl rand -base64 20
 }
