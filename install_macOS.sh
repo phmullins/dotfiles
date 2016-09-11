@@ -8,5 +8,5 @@ cp /macOS/.gitconfig ~/
 cp /macOS/.gitignore ~/
 cp /macOS/.jrnl_config ~/
 cp /macOS/.vimrc ~/
-source .bash_profile
+source ~/.bash_profile
 echo "All done. Enjoy!"
