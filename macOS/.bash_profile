@@ -30,12 +30,15 @@ shopt -s cdspell
 ## Homebrew
 export HOMEBREW_NO_EMOJI='1'
 
+## Opt out of Homebrew's analytics
+export HOMEBREW_NO_ANALYTICS=1
+
 ## Reload .bash_profile to enable changes
 alias reload='~/source .bash_profile'
 
 # Empty the Trash on all mounted volumes and the main HDD
 # Also, clear Apple’s System Logs to improve shell startup speed
-alias nuke="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+alias nuke='sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* "delete from LSQuarantineEvent"'
 
 ###############################################################################
 # History
@@ -74,9 +77,9 @@ alias ls='ls -AlhF --color=auto'
 alias ll='ls -alF --color=auto'
 alias la='ls -A --color=auto'
 alias lsh='ls -ld .??*'
-alias grep='grep --color=auto -n'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+alias grep='grep --ignore-case --color=auto -n'
+alias fgrep='fgrep --ignore-case --color=auto'
+alias egrep='egrep --ignore-case --color=auto'
 alias drives='df -h'
 alias usage='du -h -d1'
 alias c='clear'

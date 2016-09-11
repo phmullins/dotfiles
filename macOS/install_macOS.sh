@@ -3,10 +3,11 @@
 
 clear
 echo "Installing macOS configuration files...."
-cp /macOS/.bash_profile ~/
-cp /macOS/.gitconfig ~/
-cp /macOS/.gitignore ~/
-cp /macOS/.jrnl_config ~/
-cp /macOS/.vimrc ~/
+cp .bash_profile ~/
+cp .gitconfig ~/
+cp .gitignore ~/
+cp .jrnl_config ~/
+cp .vimrc ~/
+cp .wgetrc ~/
 source ~/.bash_profile
 echo "All done. Enjoy!"

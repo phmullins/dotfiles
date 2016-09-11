@@ -4,7 +4,7 @@ Dotfiles are the system files that control how the system behaves and presents i
 
 ## Installation
 
-The script(s) will take care of sourcing the system files for you. There's no need to manually source anything or restart the terminal for changes to take effect. Clone this repo (`git clone git@github.com:phmullins/dotfiles.git`) and then run the appropriate installation script for your OS. 
+The script(s) will take care of sourcing the system files for you. There's no need to manually source anything or restart the terminal for changes to take effect. Clone this repo (`git clone https://github.com/phmullins/dotfiles.git`), cd into the  appropriate folder, and then run the installation script for your OS. 
 
 - `./install_debian.sh`
 - `./install_macOS.sh`

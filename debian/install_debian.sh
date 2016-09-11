@@ -3,9 +3,10 @@
 
 clear
 echo "Installing Debian configuration files...."
-cp Debian/.bash_aliases ~/
-cp Debian/.bashrc ~/
-cp Debian/.profile ~/
+cp .bash_aliases ~/
+cp .bashrc ~/
+cp .profile ~/
+cp .wgetrc ~/
 source ~/.bash_aliases
 source ~/.bashrc
 source ~/.profile
