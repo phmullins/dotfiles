@@ -31,7 +31,7 @@ shopt -s cdspell
 export HOMEBREW_NO_EMOJI='1'
 
 ## Reload .bash_profile to enable changes
-alias reload='source .bash_profile'
+alias reload='~/source .bash_profile'
 
 # Empty the Trash on all mounted volumes and the main HDD
 # Also, clear Apple’s System Logs to improve shell startup speed
