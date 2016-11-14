@@ -7,7 +7,7 @@ cp .bash_aliases ~/
 cp .bashrc ~/
 cp .profile ~/
 cp .wgetrc ~/
-cd ~/ || exit
+cd ~/
 source .bash_aliases
 source .bashrc
 source .profile

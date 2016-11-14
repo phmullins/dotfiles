@@ -8,7 +8,7 @@ cp .bashrc ~/
 cp .gitconfig ~/
 cp .profile ~/
 cp .wgetrc ~/
-cd ~/ || exit
+cd ~/
 source .bash_aliases
 source .bashrc
 source .profile

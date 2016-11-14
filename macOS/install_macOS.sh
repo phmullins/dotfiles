@@ -9,6 +9,6 @@ cp .gitignore ~/
 cp .jrnl_config ~/
 cp .vimrc ~/
 cp .wgetrc ~/
-cd || exit
+cd ~/
 source .bash_profile
 echo "All done. Enjoy!"
