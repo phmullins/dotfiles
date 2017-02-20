@@ -9,7 +9,7 @@
 ###############################################################################
 
 ## Default Editor
-export EDITOR='bbedit'
+export EDITOR='atom'
 
 ## Custom $PATH with extra locations
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/opt/go/libexec/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
@@ -18,7 +18,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/opt/go/libexec/bin:/usr/lo
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 ## Location of Ansible host file
-export ANSIBLE_HOSTS=/Users/pmullins/Documents/Development/ansible/hosts
+export ANSIBLE_HOSTS=/Users/pmullins/.ansible/hosts
 
 ## Customize the prompt
 ## New prompt will look like this: [08:02 PM][~/Downloads]
@@ -28,13 +28,14 @@ export PS1="[\D{%I:%M %p}][\w] "
 shopt -s cdspell
 
 ## Homebrew
-export HOMEBREW_NO_EMOJI='1'
+export HOMEBREW_NO_EMOJI='0'
+export HOMEBREW_INSTALL_BADGE=🎃
 
 ## Opt out of Homebrew's analytics
 export HOMEBREW_NO_ANALYTICS=1
 
 ## Reload .bash_profile to enable changes
-alias reload='~/source .bash_profile'
+alias reload='source ~/.bash_profile'
 
 # Empty the Trash on all mounted volumes and the main HDD
 # Also, clear Apple’s System Logs to improve shell startup speed
@@ -79,8 +80,8 @@ alias rm='rm -I --preserve-root'
 alias cp='cp -i'
 alias mv='mv -i'
 alias l='ls --color=auto'
-alias ls='ls -AlhF --color=auto'
-alias ll='ls -alF --color=auto'
+alias ls='ls -lar --color=auto'
+alias ll='ls -a --color=auto'
 alias la='ls -A --color=auto'
 alias lsh='ls -ld .??*'
 alias grep='grep --ignore-case --color=auto -n'
@@ -105,9 +106,6 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-## That space is so hard to get in there. :-)
-alias cd..='cd ..'
-
 ## Move to /working/websites folder
 alias web="cd /Users/pmullins/Documents/Websites"
 
@@ -121,7 +119,7 @@ alias an='ansible'
 alias ap='ansible-playbook'
 
 ## Check for Homebrew updates
-alias update='brew update && brew upgrade --all && brew cask update && brew cleanup && brew cask cleanup'
+alias update='brew update && brew upgrade && brew cleanup && brew cask cleanup'
 
 ## Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
@@ -130,8 +128,13 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
+# Enable/Disable Spotlight
+alias spoton="sudo mdutil -a -i on"
+alias spotoff="sudo mdutil -a -i off"
+
 ## Load SSH key in SSH Agent
 alias sshload="ssh-add ~/.ssh/id_rsa"
+alias arkhamcon="ssh -i ~/.ssh/LightsailDefaultPrivateKey.pem ubuntu@54.152.56.3"
 
 ## Search list of servers
 alias dst="cat ~/Work/server_list.txt | grep "
@@ -143,15 +146,14 @@ alias swift="xcrun swift"
 alias untar='tar -zxvf'
 
 ## Generate random 20 character password
-alias randpass="openssl rand -base64 20"
-
+alias getpass="openssl rand -base64 20"
 
 ###############################################################################
 # Aliases - Networking Commands
 ###############################################################################
 
 ## Show local IP on en0
-alias iplocal='ifconfig en0 | grep --word-regexp inet | awk "{print $2}"'
+alias localip='ifconfig en0 | grep --word-regexp inet | awk "{print $2}"'
 
 ## Show public ip
 alias ippub="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -178,15 +180,12 @@ alias speed='speedtest-cli --server 2406 --simple'
 # Functions
 ###############################################################################
 
-## Push updates to Geektonium
-function geekout {
-  rm -rf /tmp/phm
-  hugo -s /Users/pmullins/Documents/Websites/www/geektonium -d /tmp/geektonium
-  rsync -avze "ssh -p 22" /tmp/geektonium/ root@198.211.110.81:/var/www/geektonium/blog
-}
-
 ## Copy dotfiles into Git repository
-function dotfiles {
-  cp /Users/pmullins/.bash_profile /Users/pmullins/Documents/Development/dotfiles/OSX/
-
+function updatedot {
+  cp /Users/pmullins/.bash_profile /Users/pmullins/Documents/Development/desktop/macOS/macos_dotfiles/macOS/
 }
+
+# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+export PATH
