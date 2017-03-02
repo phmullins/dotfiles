@@ -48,7 +48,7 @@ alias ping="ping -c 5"
 alias fastping="ping -c 100 -s.2 -c 5"
 
 # Show open ports.
-alias ports="netstat -at | grep -i "listen""
+alias ports="netstat -at | grep -i 'listen'"
 
 # wget with resume.
 alias wget="wget -c"
@@ -56,7 +56,7 @@ alias wget="wget -c"
 ## System Commands
 
 # What system am I on?
-alias whereami="echo You are logged in to: ` `"
+alias whereami="echo You are logged in to: ' '"
 
 # Show free memory in human readable format.
 alias mem="free -o -h -t"
