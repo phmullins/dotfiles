@@ -75,7 +75,6 @@ PROMPT_COMMAND='echo "$(history 1 | grep "defaults write")" | sed '/^$/d' >> ~/D
 ###############################################################################
 
 ## Useful commands
-alias bb='bbedit'
 alias rm='rm -I --preserve-root'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -90,9 +89,10 @@ alias egrep='egrep --ignore-case --color=auto'
 alias drives='df -h'
 alias usage='du -h -d1'
 alias c='clear'
+alias do='docker'
 
-## Search processes
-alias psg='ps -ef | grep '
+## List Processes the Fuzzy Way
+alias pss='ps aux | fzy -l 20'
 
 ## Create parent and child directories if not present
 alias mkdir='mkdir -pv'
@@ -110,7 +110,7 @@ alias .....='cd ../../../..'
 alias web="cd /Users/pmullins/Documents/Websites"
 
 ## Move to the Downloads folder
-alias dl="cd ~/Downloads"
+alias dow="cd ~/Downloads"
 alias doc="cd ~/Documents"
 alias dev="cd ~/Documents/Development"
 
