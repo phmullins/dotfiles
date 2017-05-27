@@ -106,13 +106,12 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-## Move to /working/websites folder
-alias web="cd /Users/pmullins/Documents/Websites"
-
-## Move to the Downloads folder
+## Move to different folders
 alias dow="cd ~/Downloads"
 alias doc="cd ~/Documents"
 alias dev="cd ~/Documents/Development"
+alias scr="cd ~/Scripts"
+alias web="cd /Users/pmullins/Documents/Websites"
 
 ## Ansible aliases
 alias an='ansible'
@@ -123,6 +122,7 @@ alias update='brew update && brew upgrade && brew cleanup && brew cask cleanup'
 
 ## Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+#alias cleanup="sudo ~/Scripts/cleanup.sh"
 
 ## Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
@@ -134,10 +134,6 @@ alias spotoff="sudo mdutil -a -i off"
 
 ## Load SSH key in SSH Agent
 alias sshload="ssh-add ~/.ssh/id_rsa"
-alias arkhamcon="ssh -i ~/.ssh/LightsailDefaultPrivateKey.pem ubuntu@54.152.56.3"
-
-## Search list of servers
-alias dst="cat ~/Work/server_list.txt | grep "
 
 ## Launch the Swift REPL
 alias swift="xcrun swift"
@@ -148,12 +144,15 @@ alias untar='tar -zxvf'
 ## Generate random 20 character password
 alias getpass="openssl rand -base64 20"
 
+## Generate SHA256 checksum
+alias sha='shasum -a 256 '
+
 ###############################################################################
 # Aliases - Networking Commands
 ###############################################################################
 
 ## Show local IP on en0
-alias localip='ifconfig en0 | grep --word-regexp inet | awk "{print $2}"'
+alias ipp='ifconfig en0 | grep --word-regexp inet | awk "{print $2}"'
 
 ## Show public ip
 alias ippub="dig +short myip.opendns.com @resolver1.opendns.com"
