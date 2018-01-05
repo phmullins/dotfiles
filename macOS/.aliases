@@ -1,0 +1,111 @@
+#!/usr/bin/env bash
+
+###############################################################################
+# Aliases
+###############################################################################
+
+## Useful commands
+alias rm='rm -I --preserve-root'
+alias cp='cp -i'
+alias mv='mv -i'
+alias l='ls --color=auto'
+alias ls='ls -lF -G --color=auto'
+alias ll='ls -la --color=auto'
+alias la='ls -A --color=auto'
+alias lsh='ls -ld .??*'
+alias grep='grep --ignore-case --color=auto -n'
+alias fgrep='fgrep --ignore-case --color=auto'
+alias egrep='egrep --ignore-case --color=auto'
+alias drives='df -h'
+alias usage='du -h -d1'
+alias c='clear'
+alias do='docker'
+
+## List Processes the Fuzzy Way
+alias pss='ps aux | fzy -l 20'
+
+## Create parent and child directories if not present
+alias mkdir='mkdir -pv'
+
+## Colorize diff output. Requires colordiff be installed
+alias diff='colordiff'
+
+## Makes moving around the CLI a little easier
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+## Move to different folders
+alias dow="cd ~/Downloads"
+alias doc="cd ~/Documents"
+alias dev="cd ~/Documents/Development"
+alias scr="cd ~/Scripts"
+alias web="cd ~/Documents/Websites"
+alias bin="cd ~/bin"
+
+## Reload .bash_profile to enable changes
+alias reload='source ~/.bash_profile'
+
+# Empty the Trash on all mounted volumes and the main HDD
+# Also, clear Apple’s System Logs to improve shell startup speed
+alias nuke='sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* "delete from LSQuarantineEvent"'
+
+# Clean up LaunchServices to remove duplicates in the “Open With” menu
+alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+
+# Lock the screen
+alias later="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+## Ansible aliases
+alias an='ansible'
+alias ap='ansible-playbook'
+
+## Check for Homebrew updates
+alias update='brew update && brew upgrade && brew cleanup && brew cask cleanup'
+
+## Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+#alias cleanup="sudo ~/Scripts/cleanup.sh"
+
+## Show/hide hidden files in Finder
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# Enable/Disable Spotlight
+alias spoton="sudo mdutil -a -i on"
+alias spotoff="sudo mdutil -a -i off"
+
+## Load SSH key in SSH Agent
+alias sshload="ssh-add ~/.ssh/id_rsa"
+
+## Launch the Swift REPL
+alias swift="xcrun swift"
+
+## Extract tar file
+alias untar='tar -zxvf'
+
+## Generate random 20 character password
+alias getpass="openssl rand -base64 20"
+
+## Generate SHA256 checksum
+alias sha='shasum -a 256 '
+
+###############################################################################
+# Aliases - Networking Commands
+###############################################################################
+
+## Limit Ping to 5 ECHO_REQUEST packets
+alias ping='ping -c 5'
+
+## Fast Ping limited to 5 ECHO_REQUEST packets
+alias fastping='ping -c 100 -s.2 -c 5'
+
+## Show open ports
+alias ports='lsof -i -P | grep -i "listen"'
+
+## wget with resume
+alias wget='wget -c'
+
+## Speedtest
+alias speed='speedtest-cli --server 2406 --simple'
