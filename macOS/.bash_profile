@@ -33,3 +33,7 @@ export PS1="[\D{%I:%M %p}][\w] "
 PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 export PATH
 
+## script /tmp/consoleOutput_$(whoami)_$(date +'%Y_%m_%d_%H_%M_%S_%N').txt ; exit
+
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin

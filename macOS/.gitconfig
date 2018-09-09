@@ -1,20 +1,13 @@
-[filter "media"]
- required = true
- clean = git media clean %f
- smudge = git media smudge %f
-
 [user]
- name = Patrick H. Mullins
- email = pmullins11@mac.com
- 
-[github]
- user = pmullins11@mac.com
-
-[format]
- pretty = oneline
-
-[color]
- ui = true
- 
-[push]
- default = simple
+	name = Patrick Mullins
+	email = pmullins11@mac.com
+[core]
+	excludesfile = /Users/pmullins/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/pmullins/.stCommitMsg

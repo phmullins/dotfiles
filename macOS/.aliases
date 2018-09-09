@@ -62,7 +62,7 @@ alias an='ansible'
 alias ap='ansible-playbook'
 
 ## Check for Homebrew updates
-alias update='brew update && brew upgrade && brew cleanup && brew cask cleanup'
+alias update='brew update && brew upgrade && brew cleanup'
 
 ## Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
@@ -108,4 +108,13 @@ alias ports='lsof -i -P | grep -i "listen"'
 alias wget='wget -c'
 
 ## Speedtest
-alias speed='speedtest-cli --server 2406 --simple'
+alias speed='speedtest-cli --server 808 --simple'
+
+## Display external IP address
+alias ipe='curl ipinfo.io/ip'
+
+## Display internal IP address
+alias ipi='ipconfig getifaddr en0'
+
+## Start a web server in any folder you'd like
+alias wwws='python -m SimpleHTTPServer 8000'
