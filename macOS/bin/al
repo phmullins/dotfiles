@@ -1,0 +1,103 @@
+#!/usr/bin/env bash
+
+# Clear the Terminal screen
+clear
+
+# Define variables
+BOOTSTRAP_ROOT=$(pwd)
+declare version="0.0.2"
+
+echo ""
+echo "    _   _    ___   _   ___ ___ ___  "
+echo "   /_\ | |  |_ _| /_\ / __| __/ __| "
+echo "  / _ \| |__ | | / _ \\__ \ _|\__ \ "
+echo " /_/ \_\____|___/_/ \_\___/___|___/ "
+echo "                                    "
+
+# Display version banner
+echo " Aliases v$version"
+echo " Released: August 10th, 2018 by pmullins11@gmail.com "
+echo ""
+
+S1="s"
+
+echo $1
+
+#if ["$1" != "$S1"]; then
+if [ $1 == S1 ]; then
+    echo "System Aliases"
+else
+    echo "No arguments passed"
+fi
+
+echo "System:"
+echo ""
+echo "  c             Clear the screen."
+echo "  rm            Delete files (Safely)."
+echo "  cp            Copy files."
+echo "  mv            Move files."
+echo "  +x            Make file executable."
+echo "  mkdir         Create parent and child directories if not present."
+echo "  lsd           List directories only."
+echo "  ll            List files and directories."
+echo "  untar         Extract a .tar file."
+echo "  diff          Colorize diff output. Requires colordiff be installed."
+echo "  drives        Show drive info in human readable format."
+echo "  usage         Display drive usage."
+echo "  grep          Global Regular Expression Matching."
+echo "  fgrep         Search for Fixed-character Strings in a File or Files."
+echo "  egrep         Search for a pattern using extended regular expressions."
+echo "  pss           List Processes the fuzzy way."
+echo "  reload        Reload .bash_profile to enable changes."
+echo "  show, hide    Show/hide hidden files in Finder."
+echo "  cleanup       Recursively delete .DS_Store files."
+echo "  lscleanup     Clean up LaunchServices to remove duplicates in the <Open With> menu."
+echo "  nuke          Empty the trash on all mounted volumes and the main HDD."
+echo "  purge         Securely empty the trash."
+echo "  later         Lock the screen."
+echo "  update        Check for Homebrew updates."
+echo ""
+
+echo "Navigation:"
+echo ""
+echo "  dow           Switch to ~/Downloads folder."
+echo "  doc           Switch to ~/Documents folder."
+echo "  dev           Switch to ~/Development folder."
+echo "  scr           Switch to ~/Scripts folder."
+echo "  web           Switch to ~/Documents/Websites folder."
+echo "  bin           Switch to ~/bin folder."
+echo "  ..            Move back one directory."
+echo "  ...           Move back two directory."
+echo "  ....          Move back three directory."
+echo "  .....         Move back four directory."
+echo ""
+
+echo "Network:"
+echo ""
+echo "  ipe           Display external IP address."
+echo "  ipi           Display internal IP address."
+echo "  ifactive      Display all active network adapters."
+echo "  ping          Limit Ping to 5 ECHO_REQUEST packets."
+echo "  fastping      Fast Ping limited to 5 ECHO_REQUEST packets."
+echo "  dns-flush     Flush DNS cache."
+echo "  dnstest       Determine best DNS servers."
+echo "  ports         Show open ports."
+echo "  wget          wget with resume."
+echo "  speed         Run a speed test."
+echo ""
+
+echo "Security:"
+echo ""
+echo "  getpass       Generate random 20 character password."
+echo "  makepass      Another way to generate a random 20 character password."
+echo "  sha           Generate SHA256 checksum."
+echo ""
+
+echo "Ansible:"
+echo "  a             Run Ansible."
+echo "  ap            Run Ansible playbook."
+echo ""
+
+echo "Programming:"
+echo "  swift         Launch the Swift REPL"
+echo ""
