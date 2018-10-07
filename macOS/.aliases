@@ -117,4 +117,4 @@ alias ipe='curl ipinfo.io/ip'
 alias ipi='ipconfig getifaddr en0'
 
 ## Start a web server in any folder you'd like
-alias wwws='python -m SimpleHTTPServer 8000'
+alias wwww='python -m SimpleHTTPServer 8000'
