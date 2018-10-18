@@ -51,3 +51,5 @@ export PATH=$PATH:$HOME/.pulumi/bin
 
 # ~/.dircolors/themefile
 eval $(gdircolors ~/.dircolors/dircolors.arkham)
+
+

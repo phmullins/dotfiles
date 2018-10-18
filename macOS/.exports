@@ -45,3 +45,6 @@ export GPG_TTY=$(tty);
 export HOMEBREW_NO_EMOJI='0'
 export HOMEBREW_INSTALL_BADGE=🎃
 export HOMEBREW_NO_ANALYTICS=1
+
+## Flutter
+export PATH=~/Documents/Development/flutter/bin:$PATH

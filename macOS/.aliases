@@ -105,7 +105,7 @@ alias fastping='ping -c 100 -s.2 -c 5'
 alias ports='lsof -i -P | grep -i "listen"'
 
 ## wget with resume
-alias wget='wget -c'
+alias wget='wget -c --no-check-certificate'
 
 ## Speedtest
 alias speed='speedtest-cli --server 808 --simple'
