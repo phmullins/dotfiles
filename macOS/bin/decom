@@ -1,9 +1,11 @@
 #!/bin/bash
 #
-# Name: ~/bin/decom
-# Desc: Uncompress archives with a single command.
+# Script Name: ~/bin/decom.sh
+# Description: Uncompress archives with a single command.
+# Created: 2017-12-21 @ 10:28 AM | Modified 2018-11-23 @ 10:43 AM.
+# Author: patrick@arkmail.us 
+#
 # Note: p7zip and unrar on MacOS require installation via Homebrew.
-# Contact: pmullins11@gmail.com | Modified 2017-12-21 @ 10:28 AM.
 
 if [ $# -lt 1 ]; then
   echo "Usage: $(basename "$0") file"

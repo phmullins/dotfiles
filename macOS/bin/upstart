@@ -4,4 +4,4 @@
 # Desc: Updated the Firefox startpage.
 # Contact: pmullins11@gmail.com | Modified 2018-09-22 @ 09:14 PM.
 
-rsync -avze "ssh -i ~/.ssh/id_rsa" /Users/pmullins/Downloads/Homepage/ pmullins11@bitvault.us:/var/www/html/home
+rsync -avze "ssh -i ~/.ssh/id_rsa" /Users/pmullins/Downloads/Bitvault/Homepage/ pmullins11@bitvault.us:/var/www/html/home

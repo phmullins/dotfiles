@@ -1,7 +1,11 @@
 #!/bin/bash
 #
-# Simple script to convert a YouTube video into an mp3.
-# Requires youtube-dl, ffmpeg, and lame.
+# Script Name: ~/bin/transmogrify.sh
+# Description: Simple script to convert a YouTube video into an mp3.
+# Created: 2018-09-29 @ 03:28 PM | Modified 2018-11-24 @ 04:03 AM.
+# Author: patrick@arkmail.us 
+#
+# Note: Requires youtube-dl, ffmpeg, and lame.
 #
 # Example usage:
 # ./transmogrify "http://www.youtube.com/watch?v=_VYggjoRb4o"
