@@ -1,16 +1,28 @@
 #!/usr/bin/env bash
+# updot v0.1.2.
 # A script that Updates all of my DOT files.
-# by Patrick H. Mullins (patrick@arkmail.net)
-# Created 2018-09-09 @ 08:24 AM. | Updated 2018-12-30 @ 01:08 PM.
+# by Patrick H. Mullins (patrick@arkmail.net).
+# Created 2018-09-09 @ 08:24 AM. | Updated 2019-07-27 @ 06:42 AM.
 
-echo "Copying updated DOT files to the Git repo....."
-rsync ~/bin/* ~/Development/desktop/macOS/macos_dotfiles/macOS/bin
-rsync ~/.aliases ~/Development/desktop/macOS/macos_dotfiles/macOS
-rsync ~/.ansible.cfg ~/Development/desktop/macOS/macos_dotfiles/macOS
-rsync ~/.bash_profile ~/Development/desktop/macOS/macos_dotfiles/macOS
-rsync ~/.dircolors ~/Development/desktop/macOS/macos_dotfiles/macOS
-rsync ~/.exports ~/Development/desktop/macOS/macos_dotfiles/macOS
-rsync ~/.gitconfig ~/Development/desktop/macOS/macos_dotfiles/macOS
-rsync ~/.hushlogin ~/Development/desktop/macOS/macos_dotfiles/macOS
-rsync ~/.profile ~/Development/desktop/macOS/macos_dotfiles/macOS
-echo "All done. Make sure you push these changes to GitHub!"
+# Clear the screen.
+clear
+
+# Assign destination paths to variables.
+scripts=~/Development/desktop/macOS/macos_dotfiles/macOS/bin
+dotfiles=~/Development/desktop/macOS/macos_dotfiles/macOS/dotfiles
+
+# Use rsync to copy files to the destination folders.
+rsync ~/bin/* $scripts
+rsync ~/.aliases $dotfiles
+rsync ~/.ansible.cfg $dotfiles
+rsync ~/.bash_profile $dotfiles
+rsync ~/.dircolors $dotfiles
+rsync ~/.exports $dotfiles
+rsync ~/.gitconfig $dotfiles
+rsync ~/.gitignore_global $dotfiles
+rsync ~/.hgignore_global $dotfiles
+rsync ~/.hushlogin $dotfiles
+rsync ~/.profile $dotfiles
+echo ""
+echo "Finished. Don't forget to commit your changes!"
+echo ""
