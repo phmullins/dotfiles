@@ -9,8 +9,10 @@ alias rm='rm -I --preserve-root'
 alias cp='cp -i'
 alias mv='mv -i'
 alias l='gls -CFa --color=auto'
-alias ls='gls -lF -G --group-directories-first --color=auto'
-alias ll='gls -la --group-directories-first --color=auto'
+#alias ls='gls -lF -G --group-directories-first --color=auto'
+alias ls='exa'
+#alias ll='gls -la --group-directories-first --color=auto'
+alias ll='exa -la'
 alias la='gls -A --group-directories-first --color=auto'
 alias lsh='gls -ld .??* --group-directories-first --color=auto'
 alias grep='grep --ignore-case --color=auto -n'
@@ -20,6 +22,10 @@ alias drives='df -h'
 alias usage='du -h -d1'
 alias c='clear'
 alias do='docker'
+alias cat='bat'
+
+## Use youtube-dl to download a video with the highest quality audio and video in .mp4 format
+alias ytb="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' "
 
 ## List Processes the Fuzzy Way
 alias pss='ps aux | fzy -l 20'

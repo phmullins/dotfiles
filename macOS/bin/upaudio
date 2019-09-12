@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# Name: ~/bin/upstart
+# Desc: Update the Audio Fidelity website.
+# Contact: pmullins11@gmail.com | Modified 2019-03-05 @ 06:41 AM.
+
+rsync -avze "ssh -i ~/.ssh/arkham.pem" /Users/pmullins/Documents/Websites/www/audiofidelity/public/ admin@ec2-107-23-247-163.compute-1.amazonaws.com:/var/www/html

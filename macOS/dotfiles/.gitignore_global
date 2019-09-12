@@ -1,5 +1,15 @@
-# Compiled source #
-###################
+######################
+# Miscellaneous      #
+######################
+
+# Ignore the BBEdit project file.
+*.bbprojectd
+*.vscode
+
+######################
+# Compiled Source    #
+######################
+
 *.com
 *.class
 *.dll
@@ -7,10 +17,10 @@
 *.o
 *.so
 
-# Packages #
-############
-# it's better to unpack these files and commit the raw source
-# git has its own built in compression methods
+######################
+# Packages           #
+######################
+
 *.7z
 *.dmg
 *.gz
@@ -20,19 +30,22 @@
 *.tar
 *.zip
 
-# Logs and databases #
 ######################
+# Logs and Databases #
+######################
+
 *.log
 *.sql
 *.sqlite
 
-# OS generated files #
 ######################
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-.vscode
+# OS Generated Files #
+######################
+
+*.DS_Store
+*.DS_Store?
+*.Spotlight-V100
+*.Trashes
+*.ehthumbs.db
+*.Thumbs.db
+

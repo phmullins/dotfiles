@@ -33,8 +33,8 @@ LOCATION='[\w] '
 export PS1="$TIME$USER$LOCATION"
 
 ## Tell SSH how to access the gpg-agent 
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
+## export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+## gpgconf --launch gpg-agent
 
 ##git_branch () { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'; }
 #HOST='\033[02;36m\]\h'; HOST=' '$HOST
